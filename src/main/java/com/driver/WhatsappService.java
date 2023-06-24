@@ -19,7 +19,12 @@ public class WhatsappService {
         Group group;
         String nameOfGroup;
         if(users.size()>2){
-            nameOfGroup = "Group "+whatsappRepository.getCustomGroupCount()+1;
+            if(whatsappRepository.getCustomGroupCount()<9){
+                nameOfGroup = "Group 0"+whatsappRepository.getCustomGroupCount()+1;
+            }
+            else{
+                nameOfGroup = "Group "+whatsappRepository.getCustomGroupCount()+1;
+            }
         }
         else{
             nameOfGroup = users.get(1).getName();
