@@ -10,10 +10,16 @@ public class Message {
     public Message() {
     }
 
-    public Message(int id, String content, Date timestamp) {
+    public Message(int id, String content) {
         this.id = id;
         this.content = content;
-        this.timestamp = timestamp;
+        //method 1
+        java.sql.Date date = new java.sql.Date(System.currentTimeMillis());
+        //method 2
+//        Date date = new Date();
+//        java.text.SimpleDateFormat formatter = new java.text.SimpleDateFormat("dd/MM/yy");
+//        String str = formatter.format(date);
+        this.timestamp = date;
     }
 
     public int getId() {

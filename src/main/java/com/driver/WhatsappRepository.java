@@ -103,13 +103,7 @@ public class WhatsappRepository {
 
     public void createMessage(int id, String content) {
         this.messageId+=1;
-        //method 1
-          java.sql.Date date=new java.sql.Date(System.currentTimeMillis());
-        //method 2
-//        Date date = new Date();
-//        java.text.SimpleDateFormat formatter = new java.text.SimpleDateFormat("dd/MM/yy");
-//        String str = formatter.format(date);
-        messageMap.put(id, new Message(id, content, date));
+        messageMap.put(id, new Message(id, content));
     }
 
     public int sendMessage(Message message, User sender, Group group) {
