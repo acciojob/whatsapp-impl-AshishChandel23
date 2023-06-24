@@ -91,15 +91,6 @@ public class WhatsappRepository {
         //create group map
         this.groupMap.put(nameOfGroup, group);
         // put in group-users map
-        //this.groupUserMap.put(group, users);
-        for(Group group1 : this.groupUserMap.keySet()){
-            for(User user : users){
-                Optional<User> userResponse = getUserInGroup(user,group1);
-                if(!userResponse.isEmpty()){
-                    users.remove(user);
-                }
-            }
-        }
         this.groupUserMap.put(group, users);
         return group;
     }
